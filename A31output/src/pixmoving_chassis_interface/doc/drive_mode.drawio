@@ -1,0 +1,396 @@
+<mxfile host="65bd71144e">
+    <diagram id="xonTFjtrlmIjfPdPlPAb" name="运营语义图">
+        <mxGraphModel dx="1643" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="DriveMode V2 状态转换图" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=31;fontStyle=1;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="20" width="820" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="把 Manual / Auto 作为两个大类；急停解除后按是否放权决定回 AutoStandby 或 ManualControl。完成/取消态只做短暂收尾发布，随后按放权状态回落。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=15;fontColor=#4B5563;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="68" width="2050" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="ManualDomain" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#64B5F6;fillColor=#F5FBFF;strokeWidth=3;fontSize=22;fontStyle=1;align=left;verticalAlign=top;spacingTop=18;spacingLeft=18;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="-40" y="140" width="650" height="1180" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="AutoDomain" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#81C784;fillColor=#F6FCF6;strokeWidth=3;fontSize=22;fontStyle=1;align=left;verticalAlign=top;spacingTop=18;spacingLeft=18;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="130" width="1350" height="1180" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="自驾过程类" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#A5D6A7;fillColor=#F7FCF5;strokeWidth=2;fontSize=18;fontStyle=1;align=left;verticalAlign=top;spacingTop=12;spacingLeft=14;fontFamily=Noto Sans JP;shadow=1;" parent="1" vertex="1">
+                    <mxGeometry x="770" y="180" width="1160" height="390" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="完成 / 收尾类" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#B39DDB;fillColor=#FBF8FF;strokeWidth=2;fontSize=18;fontStyle=1;align=left;verticalAlign=top;spacingTop=12;spacingLeft=14;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="600" width="1150" height="480" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Start" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#455A64;fillColor=#ECEFF1;strokeWidth=2;fontSize=16;fontStyle=1;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="646" width="84" height="84" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="ManualControl&lt;br&gt;(mode=1)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#1E88E5;fillColor=#E3F2FD;strokeWidth=2;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="640" width="240" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="RemoteNetwork&lt;br&gt;(mode=2, 预留)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#90A4AE;fillColor=#F5F5F5;strokeWidth=2;fontSize=16;align=center;verticalAlign=middle;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="220" width="240" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="ManualEmergencyStop" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#D32F2F;fillColor=#FFEBEE;strokeWidth=2;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="390" width="280" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="AutoStandby&lt;br&gt;(mode=4)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#43A047;fillColor=#E8F5E9;strokeWidth=2;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="230" width="220" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="AutoExecuting&lt;br&gt;(mode=5)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#2E7D32;fillColor=#C8E6C9;strokeWidth=2;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="1380" y="217" width="220" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="AutoTakeoverManual&lt;br&gt;(mode=6)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#FB8C00;fillColor=#FFF3E0;strokeWidth=2;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="427" width="250" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="AutoTakeoverBrake&lt;br&gt;(mode=7)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#FB8C00;fillColor=#FFE0B2;strokeWidth=2;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="1600" y="427" width="250" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="AutoCancelTakeover&lt;br&gt;(mode=10)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#8D6E63;fillColor=#EFEBE9;strokeWidth=2;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="960" y="890" width="250" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="AutoCancelNewTask&lt;br&gt;(mode=11)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#8D6E63;fillColor=#D7CCC8;strokeWidth=2;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="1420" y="890" width="250" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="AutoEmergencyStop" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#D32F2F;fillColor=#FFEBEE;strokeWidth=2;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="1620" y="1100" width="320" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="设计要点&lt;br&gt;1. 急停分 Manual / Auto 两条链（ManualEmergencyStop / AutoEmergencyStop）&lt;br&gt;2. 急停解除后按放权状态决定去向：放权→AutoStandby，未放权→ManualControl&lt;br&gt;3. 完成态/取消态只做短暂收尾发布（AutoDoneNear hold 3s，AutoDoneNormal 保持 1 个发布周期）&lt;br&gt;4. 收尾结束后按放权状态回落：放权→AutoStandby，未放权→ManualControl" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#90A4AE;fillColor=#FAFAFA;strokeWidth=2;fontSize=15;align=left;verticalAlign=top;spacing=12;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="2050" y="170" width="500" height="165" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="终结态回落规则（均按放权状态分支）&lt;br&gt;AutoDoneNormal --[decentralization]--&gt; AutoStandby / --[!decentralization]--&gt; ManualControl&lt;br&gt;AutoDoneNear --[hold 3s + decentralization]--&gt; AutoStandby / --[!decentralization]--&gt; ManualControl&lt;br&gt;AutoCancelTakeover --[TakeoverCancelTimeout &gt;303s]--&gt; ManualControl&lt;br&gt;AutoCancelNewTask --[count==0 + decentralization]--&gt; AutoStandby / --[!decentralization]--&gt; ManualControl&lt;br&gt;AutoDoneEstopNear --[is_estop]--&gt; AutoEmergencyStop / --[decentralization]--&gt; AutoStandby / --[!decentralization]--&gt; ManualControl" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#90A4AE;fillColor=#FAFAFA;strokeWidth=2;fontSize=15;align=left;verticalAlign=top;spacing=12;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="2050" y="380" width="500" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="AutoEmergencyStop 恢复逻辑（当前实现）&lt;br&gt;1. EmergencyCleared + decentralization -&gt; AutoStandby&lt;br&gt;2. EmergencyCleared + !decentralization -&gt; ManualControl&lt;br&gt;注：当前代码未实现 last_auto_substate 记忆恢复，急停解除后需 Autoware 重新发 DRIVING 才能恢复执行" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#43A047;fillColor=#F6FFF6;strokeWidth=2;fontSize=15;align=left;verticalAlign=top;spacing=12;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="2050" y="620" width="500" height="165" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="AutoTakeoverBrake 恢复 AutoExecuting 的 guard&lt;br&gt;autoware_state==DRIVING&lt;br&gt;（松刹车时判断）&lt;br&gt;不满足则转 AutoTakeoverManual" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#2E7D32;fillColor=#F8FFF8;strokeWidth=2;fontSize=14;align=left;verticalAlign=top;spacing=10;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="1380" y="50" width="310" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="急停恢复说明&lt;br&gt;当前实现：急停解除后按放权状态回 AutoStandby/ManualControl&lt;br&gt;未来扩展：可记录 last_auto_substate 实现自动恢复执行" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#FB8C00;fillColor=#FFF9F0;strokeWidth=2;fontSize=14;align=left;verticalAlign=top;spacing=10;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="1010" y="20" width="270" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="初始" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#455A64;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="8" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="放权 + !is_estop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#1E88E5;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="9" target="12" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="360" y="278"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="AutowareDriving" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#43A047;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="12" target="13" edge="1">
+                    <mxGeometry x="0.0012" y="20" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1170" y="268"/>
+                            <mxPoint x="1170" y="268"/>
+                        </Array>
+                        <mxPoint x="-1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="27" value="ArrivedGoal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#5E35B1;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="13" target="54" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1410" y="630"/>
+                            <mxPoint x="1000" y="630"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="Update: !decentralization → ManualControl&lt;br&gt;Update: decentralization → AutoStandby" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#5E35B1;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="54" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="530" y="720"/>
+                            <mxPoint x="530" y="720"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="29" value="RemoteTakeover" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#FB8C00;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="13" target="14" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1050" y="290"/>
+                            <mxPoint x="1050" y="370"/>
+                            <mxPoint x="925" y="370"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="30" value="BrakePedalPressed" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#FB8C00;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="13" target="15" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1735" y="300"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="31" value="BrakeReleased /&amp;nbsp;&lt;div&gt;WaitingForEngage&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#FB8C00;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="15" target="14" edge="1">
+                    <mxGeometry x="0.085" y="-28" relative="1" as="geometry">
+                        <mxPoint x="1" as="offset"/>
+                        <Array as="points">
+                            <mxPoint x="1330" y="440"/>
+                            <mxPoint x="1330" y="440"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="32" value="AutowareDriving 恢复" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#FB8C00;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="14" target="13" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1000" y="400"/>
+                            <mxPoint x="1100" y="400"/>
+                            <mxPoint x="1100" y="340"/>
+                            <mxPoint x="1390" y="340"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="33" value="NearStationStopped" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#7E57C2;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="14" target="53" edge="1">
+                    <mxGeometry x="0.0033" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1180" y="520"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="34" value="TakeoverTimeout" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8D6E63;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" source="14" target="16" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="988" y="550"/>
+                            <mxPoint x="1070" y="550"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="35" value="NewTaskReceived" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8D6E63;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="13" target="17" edge="1">
+                    <mxGeometry x="-0.2825" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1520" y="600"/>
+                            <mxPoint x="1520" y="600"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                        <mxPoint x="1519.9999999999995" y="313" as="sourcePoint"/>
+                        <mxPoint x="1519.9999999999995" y="890" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="37" value="hold 3s + !decentralization → ManualControl&lt;br&gt;hold 3s + decentralization → AutoStandby" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#7E57C2;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="53" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1270" y="810"/>
+                            <mxPoint x="360" y="810"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="38" value="TakeoverCancelTimeout (&gt;303s) → ManualControl" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8D6E63;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="16" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1060" y="1070"/>
+                            <mxPoint x="300" y="1070"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="39" value="count==0 + !decentralization → ManualControl&lt;br&gt;count==0 + decentralization → AutoStandby" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8D6E63;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="17" target="9" edge="1">
+                    <mxGeometry x="-0.1737" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1460" y="1120"/>
+                            <mxPoint x="250" y="1120"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="40" value="EmergencyTriggered" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#D32F2F;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="9" target="11" edge="1">
+                    <mxGeometry x="0.5853" y="10" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="270" y="490"/>
+                            <mxPoint x="270" y="490"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="41" value="EmergencyCleared → ManualControl" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#D32F2F;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="11" target="9" edge="1">
+                    <mxGeometry x="-0.2578" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="140" y="390"/>
+                            <mxPoint x="230" y="390"/>
+                        </Array>
+                        <mxPoint y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="42" value="EmergencyTriggered" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#D32F2F;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="53" target="18" edge="1">
+                    <mxGeometry x="-0.3213" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1320" y="1120"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43" value="EmergencyTriggered" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#D32F2F;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="14" target="18" edge="1">
+                    <mxGeometry x="-0.7401" y="-5" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1360" y="475"/>
+                            <mxPoint x="1360" y="560"/>
+                            <mxPoint x="1830" y="560"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="44" value="EmergencyTriggered" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#D32F2F;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="51" target="18" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1740" y="930"/>
+                            <mxPoint x="1740" y="930"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="45" value="【预留】guard ok: 恢复 last_auto_substate&lt;br&gt;例如 AutoExecuting（当前未实现）" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#2E7D32;dashed=1;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="18" target="13" edge="1">
+                    <mxGeometry x="-0.3593" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1920" y="265"/>
+                        </Array>
+                        <mxPoint y="-1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="46" value="【预留】guard ok: 恢复 last_auto_substate&lt;br&gt;例如 AutoTakeoverManual（当前未实现）" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#2E7D32;dashed=1;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="18" target="14" edge="1">
+                    <mxGeometry x="-0.2386" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1780" y="1200"/>
+                            <mxPoint x="730" y="1200"/>
+                            <mxPoint x="730" y="475"/>
+                        </Array>
+                        <mxPoint x="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="47" value="hold 完成 + !decentralization → ManualControl&lt;br&gt;hold 完成 + decentralization → AutoStandby&lt;br&gt;hold 完成 + is_estop → AutoEmergencyStop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#D32F2F;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="51" target="9" edge="1">
+                    <mxGeometry x="-0.1841" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1635" y="840"/>
+                            <mxPoint x="320" y="840"/>
+                        </Array>
+                        <mxPoint x="-1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="48" value="EmergencyCleared + decentralization&lt;br&gt;-&gt; AutoStandby" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#43A047;dashed=1;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="18" target="12" edge="1">
+                    <mxGeometry x="-0.4804" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1810" y="1240"/>
+                            <mxPoint x="680" y="1240"/>
+                            <mxPoint x="680" y="310"/>
+                        </Array>
+                        <mxPoint x="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="49" value="EmergencyCleared + !decentralization&lt;br&gt;-&gt; ManualControl" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#E53935;dashed=1;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;" parent="1" source="18" target="9" edge="1">
+                    <mxGeometry x="0.3414" y="-10" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1870" y="1280"/>
+                            <mxPoint x="200" y="1280"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="51" value="AutoDoneEstopNear&lt;br&gt;(mode=12)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#7E57C2;fillColor=#B39DDB;strokeWidth=2;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="1544" y="689" width="250" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="AutoDoneNear&lt;br&gt;(mode=9)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#7E57C2;fillColor=#D1C4E9;strokeWidth=2;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="1150" y="689" width="240" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="AutoDoneNormal&lt;br&gt;(mode=8)" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#5E35B1;fillColor=#EDE7F6;strokeWidth=2;fontSize=17;fontStyle=1;align=center;verticalAlign=middle;fontFamily=Noto Sans JP;" parent="1" vertex="1">
+                    <mxGeometry x="780" y="689" width="240" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="nPpVhc64QtyUPHBlgzpO-55" value="EmergencyTriggered" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#D32F2F;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="12" target="18">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="910" y="200"/>
+                            <mxPoint x="1970" y="200"/>
+                            <mxPoint x="1970" y="1172"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="nPpVhc64QtyUPHBlgzpO-56" value="EmergencyTriggered" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#D32F2F;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.076;entryY=0.024;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="13" target="18">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1490" y="1050"/>
+                            <mxPoint x="1620" y="1050"/>
+                            <mxPoint x="1620" y="1102"/>
+                        </Array>
+                        <mxPoint x="1620" y="1130" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="nPpVhc64QtyUPHBlgzpO-57" value="EmergencyTriggered" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#D32F2F;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="15">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1725" y="540"/>
+                            <mxPoint x="1890" y="540"/>
+                            <mxPoint x="1890" y="1100"/>
+                        </Array>
+                        <mxPoint x="1890" y="1100" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="nPpVhc64QtyUPHBlgzpO-58" value="NewTaskReceived" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8D6E63;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0" edge="1" parent="1" source="15" target="17">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1662" y="523"/>
+                            <mxPoint x="1662" y="600"/>
+                            <mxPoint x="1670" y="600"/>
+                            <mxPoint x="1670" y="938"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="nPpVhc64QtyUPHBlgzpO-59" value="NewTaskReceived" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#8D6E63;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0" edge="1" parent="1" source="14" target="17">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="925" y="580"/>
+                            <mxPoint x="1460" y="580"/>
+                            <mxPoint x="1460" y="938"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="nPpVhc64QtyUPHBlgzpO-60" value="EmergencyNearGoalTriggered" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#7E57C2;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0" edge="1" parent="1" source="15" target="51">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1787" y="523"/>
+                            <mxPoint x="1787" y="650"/>
+                            <mxPoint x="1794" y="650"/>
+                            <mxPoint x="1794" y="737"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="nPpVhc64QtyUPHBlgzpO-61" value="EmergencyTriggered" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#D32F2F;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0" edge="1" parent="1" source="54" target="18">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="900" y="1170"/>
+                            <mxPoint x="1620" y="1170"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="nPpVhc64QtyUPHBlgzpO-62" value="EmergencyTriggered" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#D32F2F;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0" edge="1" parent="1" source="16" target="18">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1085" y="1050"/>
+                            <mxPoint x="1230" y="1050"/>
+                            <mxPoint x="1230" y="1140"/>
+                            <mxPoint x="1620" y="1140"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="nPpVhc64QtyUPHBlgzpO-63" value="EmergencyTriggered" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#D32F2F;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="17" target="18">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1608" y="1020"/>
+                            <mxPoint x="1670" y="1020"/>
+                            <mxPoint x="1670" y="1100"/>
+                        </Array>
+                        <mxPoint x="1680" y="1090" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="nPpVhc64QtyUPHBlgzpO-54" value="附近急停完成" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#7E57C2;endArrow=block;endFill=1;fontSize=13;fontFamily=Noto Sans JP;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="14" target="51">
+                    <mxGeometry x="0.8151" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1050" y="510"/>
+                            <mxPoint x="1290" y="510"/>
+                            <mxPoint x="1290" y="610"/>
+                            <mxPoint x="1606" y="610"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                        <mxPoint x="1060" y="530" as="sourcePoint"/>
+                        <mxPoint x="1190" y="699" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
