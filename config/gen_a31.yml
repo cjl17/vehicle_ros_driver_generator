@@ -1,8 +1,8 @@
 dbc_file: a31.dbc
 protocol_conf: robobus_a31.yml
 car_type: robobus 
-sender_list: [] # Classify every message by its sender node.
-sender: ACU # All ACU messages are control; VCU messages are report.
+sender_list: [] 
+sender: ACU 
 black_list: []
 version_major: 3
 version_minor: 1
