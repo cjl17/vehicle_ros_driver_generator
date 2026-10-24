@@ -1,7 +1,4 @@
 # Vehicle ROS Driver Generator
-
-根据 DBC 文件生成协议 YAML、ROS 2 驱动源码和消息包。当前输入以 `config/a31.dbc` 的固定格式为准，统一使用 UTF-8 编码，后续 DBC 也应遵循同一约定。
-
 项目基于 Apollo 的 [Gen Vehicle Protocol Tool](https://github.com/ApolloAuto/apollo/tree/master/modules/tools/gen_vehicle_protocol) 改造。
 
 ## 处理流程
@@ -51,7 +48,7 @@ YAML 顶层仍为 `car_type`、`version_major`、`version_minor`、`protocols`�
 
 ## DBC 输入要求
 
-使用 UTF-8 编码（无 BOM），报文长度为 8 字节；信号定义采用下列固定格式。当前 `config/a31.dbc` 已是 UTF-8；旧的 GBK 文件需先转换编码。
+使用 gb2312 编码，报文长度为 8 字节；信号定义采用下列固定格式。
 
 ```dbc
 BO_ 1328 VA_DriveStaFb: 8 VCU
@@ -73,6 +70,19 @@ VAL_ 1328 VCU_ChassisDriverEnSta 0 "Disable" 1 "Enable";
 名称冲突、读取解析异常或 YAML 序列化失败都发生在打开输出文件之前，因此这些错误不会覆盖已有 YAML。文件写入沿用直接写入方式，不提供此前版本的临时文件原子替换保护。
 
 ## 命名规则
+<全大写>_<大驼峰命名法>， 例如V2A_DriveStaFb
+缩写词命名规范：<全大写>_
+非缩写词命名规范：<大驼峰命名法>，例如SafeBeltSta4
+开头的`<全大写>_`可以没有
+字段名可以带有数字，例如：SafeBeltSta5
+V2A_ -> VA_
+A2V_ -> AV_
+DBC文件格式GB2312
+字段枚举命名规范： <大驼峰命名法英文>_<中文>，这个格式是为了方便代码解析
+_<中文> 可以没有，用于中文注释
+<大驼峰命名法英文> 必须存在，
+0 "front ackerman" -> 0 "<FrontAckerman>"
+1 "enable(自动驾驶使能驱动控制)" -> 1 "Enable_自动驾驶使能驱动控制"
 
 报文名决定消息文件名、消息类型和话题；信号名决定消息字段。`extract_dbc_meta.py` 先生成小写下划线名称，后续消息生成器再将报文名转换为大驼峰。
 
@@ -130,37 +140,4 @@ python3 gen.py config/gen_a31.yml
 
 该命令会重新生成两个输出包中的对应文件；调用方包中的业务代码需要单独同步。生成源码不会执行 ROS 编译，也不会更新 `build/`、`install/` 中已有的编译产物。
 
-当前 A31 解析阶段的输出：
 
-```text
-Extract car_type:ROBOBUS's protocol meta info to file: config/robobus_a31.yml
-Total parsed protocols: 40
-Total parsed signals: 523
-Control protocols: 13
-Report protocols: 27
-```
-
-当前文件还包含 506 条信号注释、393 条枚举定义。这些数量用于核对这份 A31 文件，不是未来 DBC 必须满足的数量。
-
-最小修补版已与修改前的 `config/robobus_a31.yml` 按解析后的数据逐项比较，40 个报文、523 个信号的全部属性、注释、枚举及收发分类一致。另已验证名称冲突原名/行号定位、保留名称冲突、末尾报文、相邻报文、发送列表及黑名单引用。验证使用的临时文件已清理，未执行 ROS 编译。
-
-## 输出目录
-
-```text
-config/robobus_a31.yml
-output/src/
-|-- pix_robobus_driver/
-|   |-- include/libs/                    # CAN 协议头文件
-|   |-- include/pix_robobus_driver/       # ROS 节点头文件
-|   |-- src/libs/                        # CAN 协议实现
-|   |-- src/control_command.cpp
-|   |-- src/report_parser.cpp
-|   |-- CMakeLists.txt
-|   `-- package.xml
-`-- pix_robobus_driver_msgs/
-    |-- msg/                            # 当前 A31 的 40 个消息定义
-    |-- CMakeLists.txt
-    `-- package.xml
-```
-
-底盘接口调用方的具体名称修改记录见 [A31 消息接口修改说明](A31_MSG_INTERFACE_CHANGES.md)。
